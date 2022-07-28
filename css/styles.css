@@ -646,6 +646,7 @@ img {
   min-width: 528px;
   min-height: 581px;
   padding: 40px;
+  text-align: center;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -703,9 +704,10 @@ img {
 }
 
 .modal-form-field {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
+  text-align: left;
   color: var(--title-text-color);
 }
 
@@ -717,18 +719,24 @@ img {
   color: var(--primary-text-color);
 }
 
+.modal-form-wrapper {
+  position: relative;
+}
+
 .modal-form-input {
+  width: 100%;
   padding: 11px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   color: rgba(117, 117, 117, 0.9);
-  outline: none;
+  outline: transparent;
   transition: border-color 250ms var(--timing-function);
 }
 
 .modal-form-icon {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   left: 12px;
   fill: currentColor;
   transition: color 250ms var(--timing-function);
@@ -752,11 +760,11 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-form-field:focus-within > .modal-form-icon {
+.modal-form-field:focus-within .modal-form-icon {
   color: var(--accent-color);
 }
 
-.modal-form-field:focus-within > .modal-form-input,
+.modal-form-field:focus-within .modal-form-input,
 .modal-form-field:focus-within > .modal-form-comment {
   border-color: var(--accent-color);
 }
@@ -780,7 +788,8 @@ img {
 }
 
 .modal-checkbox-icon {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 16px;
   height: 15px;
   margin-right: 7px;
@@ -792,24 +801,28 @@ img {
   transform: scale(1.2);
   border-color: transparent;
   background-color: var(--accent-color);
-  background-image: url(../images/modal/checkbox-icon.svg);
+  /* background-image: url(../images/modal/checkbox-icon.svg);
   background-size: contain;
-  background-origin: border-box;
+  background-origin: border-box; */
+}
+
+.modal-policy-text {
+  user-select: none;
 }
 
 .modal-policy-link {
   color: var(--accent-color);
+  text-underline-position: under;
 }
 
 .modal-form-button {
-  margin: 0 auto;
   padding: 10px 52px;
   min-width: 200px;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
