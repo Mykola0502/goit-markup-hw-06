@@ -809,6 +809,10 @@ img {
   background-origin: border-box; */
 }
 
+.modal-checkbox-field:focus-within .modal-checkbox-icon {
+  border-color: var(--accent-color);
+}
+
 .modal-policy-text {
   user-select: none;
 }
